@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title EzAccessEventPlanner
+		= csrf_meta_tags
+		= csp_meta_tag
+
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+		= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+	body
+		.container
+			.row.pb-1
+				.col
+					= render :partial => "layouts/header"
+			.row.pt-5
+				.col
+					= yield
+			.row
+				.col
+					= render :partial => "layouts/footer"
