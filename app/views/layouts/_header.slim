@@ -15,7 +15,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
 					a.nav-link href="#" Contact
 				- if logged_in?
 					li.nav-item
-						a.nav-link href="logout" Logout
+						= link_to "Log out", logout_path, method: :delete, :class => "nav-link"
 				- else	
 					li.nav-item
 						a.nav-link href="login" Login
