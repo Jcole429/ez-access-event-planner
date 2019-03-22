@@ -1,0 +1,23 @@
+.row
+	.col
+		- provide(:title,'Sign up')
+		h1 Sign up
+
+		.container
+			.row
+			= form_for(@user) do |f|
+				.col.form-group
+					= f.label :name
+					= f.text_field :name, class: 'form-control'
+				.col.form-group
+					= f.label :email
+					= f.email_field :email, class: 'form-control'
+				.col.form-group
+					= f.label :password
+					= f.password_field :password, class: 'form-control'
+				.col.form-group
+					= f.label :password_confirmation, "Confirmation"
+					= f.password_field :password_confirmation, class: 'form-control'
+				.col.form-group
+					= f.submit "Create my account", class: "btn btn-primary"
+			

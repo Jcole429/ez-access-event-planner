@@ -1,7 +1,8 @@
 doctype html
 html
 	head
-		title EzAccessEventPlanner
+		title 
+			= full_title(yield(:title))
 		= csrf_meta_tags
 		= csp_meta_tag
 
@@ -15,6 +16,9 @@ html
 					= render :partial => "layouts/header"
 			.row.pt-5
 				.col
+					-flash.each do |message_type, message|
+        				.[class="alert alert-#{@message_type}"]
+        					= message
 					= yield
 			.row
 				.col
