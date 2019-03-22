@@ -6,7 +6,7 @@ ruby '2.6.0'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'slim'
-gem 'bcrypt','3.1.12'
+gem 'bcrypt','~> 3.1.12'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
