@@ -17,7 +17,7 @@ html
 			.row.pt-5
 				.col
 					-flash.each do |message_type, message|
-        				.[class="alert alert-#{@message_type}"]
+        				.[class="alert alert-#{message_type}"]
         					= message
 					= yield
 			.row

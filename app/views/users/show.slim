@@ -1,3 +1,8 @@
-= @user.name 
-span ,&nbsp;
-= @user.email
+h2 = @user.name 
+h6 Email: #{@user.email}
+h6 User type: #{@user.user_type}
+h6 Street: #{@user.street}
+h6 City: #{@user.city}
+h6 State: #{@user.state}
+h6 Zip: #{@user.zip}
+=link_to "Edit Profile", edit_user_path(current_user)

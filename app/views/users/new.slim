@@ -18,6 +18,10 @@
 				.col.form-group
 					= f.label :password_confirmation, "Confirmation"
 					= f.password_field :password_confirmation, class: 'form-control'
+				.col.form-inline
+					= f.label :customer
+					= f.radio_button :user_type, 'Customer', class: 'form-control'
+					= f.label :vendor, class: 'ml-2'
+					= f.radio_button :user_type, 'Vendor', class: 'form-control'
 				.col.form-group
 					= f.submit "Create my account", class: "btn btn-primary"
-			
