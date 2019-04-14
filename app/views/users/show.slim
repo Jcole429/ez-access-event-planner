@@ -5,4 +5,5 @@ h6 Street: #{@user.street}
 h6 City: #{@user.city}
 h6 State: #{@user.state}
 h6 Zip: #{@user.zip}
+h6 Vendor: #{user_vendor(current_user).name}
 =link_to "Edit Profile", edit_user_path(current_user)

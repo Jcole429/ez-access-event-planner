@@ -9,6 +9,7 @@ class CreateVendors < ActiveRecord::Migration[5.2]
       t.string :state
       t.string :zip
       t.boolean :active_flg
+      t.string :service
 
       t.timestamps
     end
