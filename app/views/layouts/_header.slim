@@ -6,19 +6,21 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
 	  	div.collapse.navbar-collapse id="navbarResponsive"
 			ul.navbar-nav.ml-auto
 		  		li.nav-item
-					a.nav-link href="/" Home
+					a.nav-item
+						= link_to "Home", root_path, :class => "nav-link #{'active' if @title == 'Home'}"
 				li.nav-item
 					a.nav-item
-						= link_to "About", about_path, :class => "nav-link"
+						= link_to "About", about_path, :class => "nav-link #{'active' if @title == 'About'}"
+			
 				li.nav-item
 					a.nav-item
-						= link_to "Services", services_path, :class => "nav-link"
+						= link_to "Services", services_path, :class => "nav-link #{'active' if @title == 'Services'}"
 				li.nav-item
 					a.nav-item
-						= link_to "Contact Us", contact_path, :class => "nav-link"
+						= link_to "Contact Us", contact_path, :class => "nav-link #{'active' if @title == 'Contact Us'}"
 				- if logged_in?
 					li.nav_item
-						= link_to "My Profile", user_path(current_user), :class => "nav-link"
+						= link_to "My Profile", user_path(current_user), :class => "nav-link #{'active' if @title == 'My Profile'}"
 					li.nav-item
 						= link_to "Log out", logout_path, method: :delete, :class => "nav-link"
 				- else	
