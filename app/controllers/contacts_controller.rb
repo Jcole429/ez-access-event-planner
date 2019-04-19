@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
 	  		flash[:success] = "Note sent!"
 	  		redirect_to contact_path
   		else
-      		flash[:danger] = @user.errors.full_messages.join(", ")
+      		flash[:danger] = @contact.errors.full_messages.join(", ")
   			render 'new'
   		end
 	end
