@@ -1,7 +1,17 @@
 class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
+    @vendor = Vendor.find(@user.vendor_id)
+    @vendor_to_services = VendorToService.where("vendor_id = ?", @vendor.id)
+    @vendor_services = Array.new
+    @vendor_to_services.each do |f|
+      @vendor_services.push([Service.find(f.service_id),f.price])
+    end
     @title = 'My Profile'
+    if @user.nil?
+      redirect_to root_path
+    end
+
 	end
 
   def new

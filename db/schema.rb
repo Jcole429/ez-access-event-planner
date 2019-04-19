@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_191545) do
+ActiveRecord::Schema.define(version: 2019_04_19_002137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "services", force: :cascade do |t|
+    t.string "service_name"
+    t.string "service_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -30,6 +37,14 @@ ActiveRecord::Schema.define(version: 2019_04_13_191545) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  create_table "vendor_to_services", force: :cascade do |t|
+    t.integer "vendor_id"
+    t.integer "service_id"
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "vendors", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -39,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_04_13_191545) do
     t.string "state"
     t.string "zip"
     t.boolean "active_flg"
+    t.string "service"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

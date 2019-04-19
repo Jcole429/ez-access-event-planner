@@ -1,0 +1,2 @@
+class VendorToService < ApplicationRecord
+end

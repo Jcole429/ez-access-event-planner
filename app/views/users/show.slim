@@ -7,3 +7,21 @@ h6 State: #{@user.state}
 h6 Zip: #{@user.zip}
 h6 Vendor: #{user_vendor(current_user).name}
 =link_to "Edit Profile", edit_user_path(current_user)
+br
+br
+-if is_vendor?(@user)
+	h2 Vendor
+	h6 Vendor: #{@vendor.name}
+	h6 Address: #{@vendor.street} #{@vendor.city}, #{@vendor.state} #{@vendor.zip}
+	h6 Email: #{@vendor.email}
+	h6 Phone: #{@vendor.phone}
+	br
+	h5 Vendor Services:
+	table
+		tr
+			th Service
+			th Price
+		- @vendor_services.each do |f|
+			tr
+				td = f[0].service_name
+				td = f[1]

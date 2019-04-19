@@ -1,8 +1,9 @@
 =provide(:title, "Edit user")
 h1 Update your profile
-
 .row
   .col-md-6.col-md-offset-3
+    label Vendor
+    input.form-control#disabledTextInput type='text' readonly='true' value='#{user_vendor(current_user).name}'
     = form_for(@user) do |f|
       = render 'layouts/error_messages'
 
