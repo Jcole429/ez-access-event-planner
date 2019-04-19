@@ -1,0 +1,20 @@
+- provide(:title,@title)
+h3 = @title
+br
+h6 E-Z Access Event Planners
+h6 312-313-4324
+h6 ezAccessEventPlanners@gmail.com
+
+= form_for(@contact) do |f|
+	= render 'layouts/error_messages'
+
+	= f.label :name
+	= f.text_field :name, class: 'form-control'
+
+	= f.label :email
+	= f.text_field :email, class: 'form-control'
+
+	= f.label :note
+	= f.text_field :note, class: 'form-control'
+
+	= f.submit "Send Note", class: "btn btn-primary"

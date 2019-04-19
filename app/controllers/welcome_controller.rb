@@ -9,5 +9,6 @@ class WelcomeController < ApplicationController
 
 	def services
 		@title = "Services"
+		@services = Service.all
 	end
 end

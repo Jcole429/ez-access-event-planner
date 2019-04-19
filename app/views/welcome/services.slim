@@ -1,2 +1,6 @@
 - provide(:title,@title)
 h3 = @title
+
+p We offer these services from a wide array of vendors to best fit your buget and goals:
+- @services.each do |f|
+	h6 = f.service_name
