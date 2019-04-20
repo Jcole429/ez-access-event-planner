@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 	root :to => 'welcome#index'
+
+	get '/about', to: 'welcome#about'
+	
 	get '/signup', to: 'users#new'
 
 	get '/login', to: 'sessions#new'
@@ -9,9 +12,9 @@ Rails.application.routes.draw do
 	get '/contact', to: 'contacts#new'
 	post '/contact', to: 'contacts#create'
 
-	get '/about', to: 'welcome#about'
-	get '/services', to: 'welcome#services'
+	get '/services', to: 'services#index'
 
 	resources :users
 	resources :contacts
+	resources :vendor_to_services
 end

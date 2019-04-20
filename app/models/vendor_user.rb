@@ -1,2 +1,0 @@
-class VendorUser < ApplicationRecord
-end

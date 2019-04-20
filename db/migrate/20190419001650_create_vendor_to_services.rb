@@ -4,7 +4,6 @@ class CreateVendorToServices < ActiveRecord::Migration[5.2]
     	t.integer :vendor_id
     	t.integer :service_id
     	t.float :price
-
       t.timestamps
     end
   end

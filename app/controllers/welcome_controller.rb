@@ -6,9 +6,4 @@ class WelcomeController < ApplicationController
 	def about
 		@title = "About"
 	end
-
-	def services
-		@title = "Services"
-		@services = Service.all
-	end
 end

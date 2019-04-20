@@ -6,7 +6,7 @@ class UsersController < ApplicationController
       @vendor_to_services = VendorToService.where("vendor_id = ?", @vendor.id)
       @vendor_services = Array.new
       @vendor_to_services.each do |f|
-        @vendor_services.push([Service.find(f.service_id),f.price])
+        @vendor_services.push([Service.find(f.service_id),f.price,f.id])
       end
     end
     @title = 'My Profile'

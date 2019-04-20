@@ -1,0 +1,21 @@
+.row
+	.col
+		- provide(:title,'Add Service')
+		h1 Add Vendor Service
+
+		.container
+			.row
+			= form_for(@vendor_to_service) do |f|
+				.col.form-group
+					= f.label :vendor_id
+					= f.text_field :vendor_id, :value => user_vendor(current_user).name, :readonly => true, class: 'form-control'
+				.col.form-group
+					= f.label :service_id
+					= f.text_field :service_id, class: 'form-control'
+					/br
+					/ = f.select(:service_id, @available_services, { :class => 'form-control' })
+				.col.form-group
+					= f.label :price
+					= f.number_field :price, step: 0.01, class: 'form-control'
+				.col.form-group
+					= f.submit "Create Vendor Service", class: "btn btn-primary"

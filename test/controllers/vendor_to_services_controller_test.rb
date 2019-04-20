@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class VendorUserTest < ActiveSupport::TestCase
+class VendorToServicesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
