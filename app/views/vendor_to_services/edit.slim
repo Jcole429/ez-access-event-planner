@@ -1,0 +1,15 @@
+=provide(:title, "Edit Service")
+h1 Update your service
+.row
+	.col-md-6.col-md-offset-3
+		label Vendor
+		input.form-control#disabledTextInput type='text' readonly='true' value='#{get_vendor_name(@vendor_to_service.vendor_id)}'
+		label Service
+		input.form-control#disabledTextInput type='text' readonly='true' value='#{get_service_name(@vendor_to_service.service_id)}'
+		= form_for(@vendor_to_service) do |f|
+			= render 'layouts/error_messages'
+
+			= f.label :price
+			= f.text_field :price, class: 'form-control'
+
+			= f.submit "Save changes", class: "btn btn-primary"

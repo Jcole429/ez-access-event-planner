@@ -28,7 +28,22 @@ class VendorToServicesController < ApplicationController
 		redirect_to user_path(current_user)
 	end
 
-	def vendor_to_service_params
-  		params.require(:vendor_to_service).permit(:service_id,:vendor_id,:price)
+  	def edit
+  		@vendor_to_service = VendorToService.find(params[:id])
   	end
+
+  	def update
+    	@vendor_to_service = VendorToService.find(params[:id])
+		if @vendor_to_service.update_attributes(vendor_to_service_params)
+			flash[:success] = "Profile updated"
+			redirect_to user_path(current_user)
+		else
+			render 'edit'
+		end
+	end
+
+	private
+		def vendor_to_service_params
+			params.require(:vendor_to_service).permit(:service_id,:vendor_id,:price)
+		end
 end

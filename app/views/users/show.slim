@@ -24,6 +24,7 @@ br
 			tr
 				td = f[0].service_name
 				td = f[1]
+				td = link_to "Edit", edit_vendor_to_service_path(f[2])
 				td = link_to "Delete", vendor_to_service_path(f[2]), method: :delete
 	= link_to "Add Vendor Service", new_vendor_to_service_path
 	br
