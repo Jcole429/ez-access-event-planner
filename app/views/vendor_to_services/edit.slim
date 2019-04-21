@@ -10,6 +10,6 @@ h1 Update your service
 			= render 'layouts/error_messages'
 
 			= f.label :price
-			= f.text_field :price, class: 'form-control'
+			= f.number_field :price,step: 0.01, class: 'form-control'
 
 			= f.submit "Save changes", class: "btn btn-primary"

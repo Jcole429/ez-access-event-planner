@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 	get '/about', to: 'welcome#about'
 	
 	get '/signup', to: 'users#new'
+	get '/register_as_vendor/:id', to: 'users#register_as_vendor'
+	patch '/register', to: 'users#register'
 
 	get '/login', to: 'sessions#new'
 	post '/login', to: 'sessions#create'
@@ -17,4 +19,5 @@ Rails.application.routes.draw do
 	resources :users
 	resources :contacts
 	resources :vendor_to_services
+	resources :vendors
 end

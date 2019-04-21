@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2019_04_19_020851) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.string "user_type"
     t.string "street"
     t.string "city"
     t.string "state"

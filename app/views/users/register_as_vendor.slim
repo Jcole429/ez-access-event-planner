@@ -1,0 +1,10 @@
+=provide(:title, "Register as Vendor")
+h1 Register as a vendor
+.row
+	.col-md-6.col-md-offset-3
+    	= form_for @user, url: {action: "register"} do |f|
+      		= render 'layouts/error_messages'
+			= f.label :vendor_id
+			= f.text_field :vendor_id, class: 'form-control'
+			= hidden_field(:user, :id)
+      		= f.submit "Save changes", class: "btn btn-primary"

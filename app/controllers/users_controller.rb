@@ -38,6 +38,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
@@ -46,8 +47,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def register_as_vendor
+    @user = User.find(params[:id])
+  end
+
+  def register
+    @user = User.find(user_params[:id])
+    @vendor = Vendor.find_or_create_by(name: user_params[:vendor_id])
+    new_params = {:vendor_id => @vendor.id}
+    if @user.update_attributes(new_params)
+      flash[:success] = "Registered as Vendor"
+      redirect_to @user
+    else
+      render 'register_as_vendor'
+    end
+  end
+
   private
   	def user_params
-  		params.require(:user).permit(:name,:email,:password,:password_confirmation,:user_type,:street,:city,:state,:zip)
+  		params.require(:user).permit(:name,:email,:password,:password_confirmation,:user_type,:street,:city,:state,:zip,:vendor_id,:id)
   	end
 end

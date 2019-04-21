@@ -1,11 +1,13 @@
 h2 = @user.name 
 h6 Email: #{@user.email}
-h6 User type: #{@user.user_type}
 h6 Street: #{@user.street}
 h6 City: #{@user.city}
 h6 State: #{@user.state}
 h6 Zip: #{@user.zip}
-=link_to "Edit Profile", edit_user_path(current_user)
+= link_to "Edit Profile", edit_user_path(current_user)
+-if !is_vendor?(@user)
+	br
+	= link_to "Register as a vendor", "/register_as_vendor/#{current_user.id}"
 br
 br
 -if is_vendor?(@user)
@@ -14,6 +16,8 @@ br
 	h6 Address: #{@vendor.street} #{@vendor.city}, #{@vendor.state} #{@vendor.zip}
 	h6 Email: #{@vendor.email}
 	h6 Phone: #{@vendor.phone}
+	= link_to "Edit Vendor Info", edit_vendor_path(@vendor.id)
+	br
 	br
 	h5 Vendor Services:
 	table
@@ -25,6 +29,7 @@ br
 				td = f[0].service_name
 				td = f[1]
 				td = link_to "Edit", edit_vendor_to_service_path(f[2])
+				td |
 				td = link_to "Delete", vendor_to_service_path(f[2]), method: :delete
 	= link_to "Add Vendor Service", new_vendor_to_service_path
 	br
