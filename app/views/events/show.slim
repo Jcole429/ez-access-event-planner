@@ -1,9 +1,9 @@
 = link_to "Back to all events", events_path
 h3 = @event.event_name
+h4 Event Info
 = link_to "Edit Event", edit_event_path(@event)
 table.table
 	tr
-		th View Services
 		th Event ID
 		th Event Name
 		th User ID
@@ -11,7 +11,6 @@ table.table
 		th Date Created
 		th Date Updated
 	tr
-		td Link to services
 		td = @event.id
 		td = @event.event_name
 		td = @event.user_id
