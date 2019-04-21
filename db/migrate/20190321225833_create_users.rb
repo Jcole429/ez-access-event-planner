@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :state
       t.string :zip
       t.integer :vendor_id
-      t.bool :admin
+      t.boolean :admin
       t.timestamps
     end
   end

@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
 	get '/services', to: 'services#index'
 
+	get '/admin', to: 'admins#index'
+
 	resources :users
 	resources :contacts
 	resources :vendor_to_services

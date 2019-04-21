@@ -1,0 +1,87 @@
+h3 Admin View
+br
+br
+h4 All Users
+table.table
+	tr
+		th User ID
+		th Name
+		th Email
+		th Street
+		th City
+		th State
+		th Zip
+		th Vendor ID
+		th Admin
+		th Date Created
+		th Date Updated
+	- User.all.each do |f|
+		tr
+			td = f.id
+			td = f.name
+			td = f.email
+			td = f.street
+			td = f.city
+			td = f.state
+			td = f.zip
+			td = f.vendor_id
+			td = f.admin
+			td = f.created_at
+			td = f.updated_at
+h4 All Vendors
+table.table
+	tr
+		th Vendor ID
+		th Name
+		th Email
+		th Phone
+		th Street
+		th City
+		th State
+		th Zip
+		th Active
+		th Date Created
+		th Date Updated
+	- Vendor.all.each do |f|
+		tr
+			td = f.id
+			td = f.name
+			td = f.email
+			td = f.phone
+			td = f.street
+			td = f.city
+			td = f.state
+			td = f.zip
+			td = f.active_flg
+			td = f.created_at
+			td = f.updated_at
+h4 All Services
+table.table
+	tr
+		th Service ID
+		th Service Name
+		th Service Description
+		th Created At
+		th Updated At
+	- Service.all.each do |f|
+		tr
+			td = f.id
+			td = f.service_name
+			td = f.service_description
+			td = f.created_at
+			td = f.updated_at
+h4 All Vendors To Services
+table.table
+	tr
+		th ID
+		th Vendor ID
+		th Service ID
+		th Created At
+		th Updated At
+	- VendorToService.all.each do |f|
+		tr
+			td = f.id
+			td = f.vendor_id
+			td = f.service_id
+			td = f.created_at
+			td = f.updated_at

@@ -6,4 +6,8 @@ module UsersHelper
 	def is_vendor?(user)
 		!user[:vendor_id].nil?
 	end
+
+	def is_admin?
+		current_user.admin
+	end
 end

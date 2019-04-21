@@ -20,6 +20,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
 				- if logged_in?
 					li.nav_item
 						= link_to "My Profile", user_path(current_user), :class => "nav-link #{'active' if @title == 'My Profile'}"
+					- if is_admin?
+						li.nav_item
+							= link_to "Admin", admin_path, :class => "nav-link #{'active' if @title == 'Admin'}"
 					li.nav-item
 						= link_to "Log out", logout_path, method: :delete, :class => "nav-link"
 				- else	

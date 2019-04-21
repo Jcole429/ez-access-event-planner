@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_04_19_020851) do
     t.string "state"
     t.string "zip"
     t.integer "vendor_id"
+    t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email"
