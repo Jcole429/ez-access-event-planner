@@ -102,3 +102,35 @@ table.table
 			td = f.service_id
 			td = f.created_at
 			td = f.updated_at
+h4 All Events
+table.table
+	tr
+		th ID
+		th User ID
+		th Admin ID
+		th Event Name
+		th Created At
+		th Updated At
+	- Event.all.each do |f|
+		tr
+			td = f.id
+			td = f.user_id
+			td = f.admin_id
+			td = f.event_name
+			td = f.created_at
+			td = f.updated_at
+h4 All Events to Vendor Services
+table.table
+	tr
+		th ID
+		th Event ID
+		th Vendor To Service ID
+		th Created At
+		th Updated At
+	- EventToVendorToService.all.each do |f|
+		tr
+			td = f.id
+			td = f.event_id
+			td = f.vendor_to_service_id
+			td = f.created_at
+			td = f.updated_at
