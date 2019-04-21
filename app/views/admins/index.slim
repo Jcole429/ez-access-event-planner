@@ -28,6 +28,23 @@ table.table
 			td = f.admin
 			td = f.created_at
 			td = f.updated_at
+h4 All Contact Us Submissions
+table.table
+	tr
+		th ID
+		th Name
+		th Email
+		th Note
+		th Date Created
+		th Date Updated
+	- Contact.all.each do |f|
+		tr
+			td = f.id
+			td = f.name
+			td = f.email
+			td = f.note
+			td = f.created_at
+			td = f.updated_at
 h4 All Vendors
 table.table
 	tr
