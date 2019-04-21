@@ -1,0 +1,2 @@
+class EventToVendorToService < ApplicationRecord
+end

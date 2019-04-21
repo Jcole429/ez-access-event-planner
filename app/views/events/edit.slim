@@ -1,0 +1,22 @@
+.row
+	.col
+		- provide(:title,'Edit Event')
+		h1 Create new event
+
+		.container
+			.row
+			= form_for(@event) do |f|
+				.col.form-group
+					= f.label :id
+					= f.text_field :id, readonly: true, class: 'form-control'
+				.col.form-group
+					= f.label :user_id
+					= f.text_field :user_id, class: 'form-control'
+				.col.form-group
+					= f.label :admin_id
+					= f.text_field :admin_id, :value => current_user.id, readonly: true, class: 'form-control'
+				.col.form-group
+					= f.label :event_name
+					= f.text_field :event_name, class: 'form-control'
+				.col.form-group
+					= f.submit "Update Event", class: "btn btn-primary"

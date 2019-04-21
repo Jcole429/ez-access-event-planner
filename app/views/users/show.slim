@@ -33,3 +33,23 @@ br
 				td = link_to "Delete", vendor_to_service_path(f[2]), method: :delete
 	= link_to "Add Vendor Service", new_vendor_to_service_path
 	br
+br
+br
+h3 My Events
+table.table
+	tr
+		th Event ID
+		th User ID
+		th Admin ID
+		th Event Name
+		th Created At
+		th Updated At
+	- Event.where(user_id: @user.id).all.each do |f|
+		tr
+			td = f.id
+			td = f.user_id
+			td = f.admin_id
+			td = f.event_name
+			td = f.created_at
+			td = f.updated_at
+

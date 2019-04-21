@@ -1,0 +1,23 @@
+h4 All Events
+= link_to "Create Event", new_event_path
+table.table
+	tr
+		th Event Operations
+		th Event ID
+		th Event Name
+		th User ID
+		th Admin ID
+		th Date Created
+		th Date Updated
+	- Event.all.each do |f|
+		tr
+			td 
+				= link_to "Delete",{:action => :destroy, :id => f.id}, :method => :delete
+				span |
+				= link_to "View", event_path(f)
+			td = f.id
+			td = f.event_name
+			td = f.user_id
+			td = f.admin_id
+			td = f.created_at
+			td = f.updated_at

@@ -1,0 +1,16 @@
+.row
+	.col
+		- provide(:title,'New event service')
+		h1 Add new event service
+
+		.container
+			.row
+			= form_for(@event_to_vendor_to_services) do |f|
+				.col.form-group
+					= f.label :event_id
+					= f.number_field :event_id, readonly: true, :value => @event_id, class: 'form-control'
+				.col.form-group
+					= f.label :vendor_to_service_id
+					= f.number_field :vendor_to_service_id, class: 'form-control'
+				.col.form-group
+					= f.submit "Create Event Service", class: "btn btn-primary"

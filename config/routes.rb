@@ -18,8 +18,12 @@ Rails.application.routes.draw do
 
 	get '/admin', to: 'admins#index'
 
+	# delete '/event', to: 'events#destroy'
+
 	resources :users
 	resources :contacts
 	resources :vendor_to_services
 	resources :vendors
+	resources :events
+	resources :event_to_vendor_to_services
 end

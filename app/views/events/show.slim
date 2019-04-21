@@ -1,0 +1,39 @@
+= link_to "Back to all events", events_path
+h3 = @event.event_name
+= link_to "Edit Event", edit_event_path(@event)
+table.table
+	tr
+		th View Services
+		th Event ID
+		th Event Name
+		th User ID
+		th Admin ID
+		th Date Created
+		th Date Updated
+	tr
+		td Link to services
+		td = @event.id
+		td = @event.event_name
+		td = @event.user_id
+		td = @event.admin_id
+		td = @event.created_at
+		td = @event.updated_at
+h4 Event Services
+= link_to "Add Event Services", new_event_to_vendor_to_service_path(:event_id => @event.id)
+table.table
+	tr
+		th Event Operations
+		th ID
+		th Event ID
+		th Vendor To Service ID
+		th Created At
+		th Updated At
+	- EventToVendorToService.where(event_id: @event.id).all.each do |f|
+		tr
+			td = link_to "Delete","/event_to_vendor_to_services/#{f.id}", method: :Delete
+			td = f.id
+			td = f.event_id
+			td = f.vendor_to_service_id
+			td = f.created_at
+			td = f.updated_at
+
